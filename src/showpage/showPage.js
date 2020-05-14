@@ -1,6 +1,6 @@
 import React from 'react';
 
-const showPage = (props) => {
+const ShowPage = (props) => {
     return (
         <div>
             show page component
@@ -8,4 +8,4 @@ const showPage = (props) => {
     )
 }
 
-export default showPage;
+export default ShowPage;
