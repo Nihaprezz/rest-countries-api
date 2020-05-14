@@ -1,0 +1,14 @@
+.card-contaner {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.main-page-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.card {
+    border: 3px solid green;
+    margin: 8%;
+}
