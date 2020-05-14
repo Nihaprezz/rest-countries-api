@@ -13,13 +13,16 @@ function CountryCard(props){
     }
     
     return (
-        <div className="card">
+        <div className="card light-card">
             {/* <img style={{width: '200px'}} alt="country flag" src={flag}></img> */}
             <div style={cardStyle}></div>
-            <h3>{name}</h3>
-            <p>{population}</p>
-            <p>{region}</p>
-            <p>{capital}</p>
+
+            <div className="card-contents">
+                <h3>{name}</h3>
+                <p><span>Population:</span> {population}</p>
+                <p><span>Region:</span> {region}</p>
+                <p><span>Capital:</span> {capital}</p>  
+            </div>   
         </div>
     )
 }

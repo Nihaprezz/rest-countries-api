@@ -20,7 +20,7 @@ function Main(){
 
 
     return (
-        <div className="card-container">
+        <div style={{background: 'hsl(0, 0%, 98%)'}} className="card-container">
              main page component
              
              <div className="main-page-grid">

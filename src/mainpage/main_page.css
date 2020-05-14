@@ -1,6 +1,6 @@
-.card-contaner {
-    margin-left: 5%;
-    margin-right: 5%;
+.card-container {
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 .main-page-grid {
@@ -9,6 +9,14 @@
 }
 
 .card {
-    border: 3px solid green;
     margin: 8%;
+}
+
+.card-contents {
+    padding: 2% 5% 5% 5%;
+}
+
+/* this light mode will be toggled on and off */
+.light-card {
+    background: white;
 }
