@@ -1,11 +1,13 @@
 import React, {useState, useEffect} from 'react';
-import CountryCard from "./countryCard"
+import CardContainer from './cardContainer';
+import FilterForm from "./filterForm";
 import './main_page.css'
 
 const url = 'https://restcountries.eu/rest/v2/all'
 
 function Main(){
     const [countries, setCountries] = useState([])
+    const [searchText, setSearchText] = useState("")
 
     useEffect(() => {
         async function fetchCountries(){
@@ -19,17 +21,16 @@ function Main(){
     }, [])
 
 
+    const updatingSearch = (e) => {
+        let search = e.target.value.toLowerCase();
+        setSearchText(search)
+    }    
+
+
     return (
         <div style={{background: 'hsl(0, 0%, 98%)'}} className="card-container">
-             main page component
-             
-             <div className="main-page-grid">
-             {countries.length ? (
-                countries.map(country => {
-                    return <CountryCard key={country.numericCode} countryObj={country}/>
-                })
-             ) : <p>loading..</p>}
-             </div>
+            <FilterForm updatingSearch={updatingSearch}/>
+            <CardContainer countries={countries.filter(country => country.name.toLowerCase().includes(searchText))}/>
         </div>
     )
 }
