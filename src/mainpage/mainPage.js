@@ -7,19 +7,17 @@ const url = 'https://restcountries.eu/rest/v2'
 
 function Main(){
     const [countries, setCountries] = useState([])
-    const [searchText, setSearchText] = useState("")
+    const [searchText, setSearchText] = useState("");
 
     useEffect(() => {
-        async function fetchCountries(){
-            let resp = await fetch(url + '/all')
-            resp = await resp.json();
-            
-            setCountries(resp)
-        }
-
-        fetchCountries();
+        fetchCountries('/all');
     }, [])
 
+    const fetchCountries = async function(endpoint){
+        let resp = await fetch(url + `${endpoint}`)
+        resp = await resp.json();
+        setCountries(resp)
+    }
 
     const updatingSearch = (e) => {
         let search = e.target.value.toLowerCase();
@@ -28,15 +26,8 @@ function Main(){
 
     const updateRegion = (e) => {
         let region = e.target.value.toLowerCase();
-
-        async function fetchByRegion(){
-            let resp = await fetch(url + `/region/${region}`)
-            resp = await resp.json();
-
-            setCountries(resp)
-        }
-
-        fetchByRegion();
+        let endpoint = region ? `/region/${region}` : '/all'
+        fetchCountries(endpoint)
     }
 
     return (
