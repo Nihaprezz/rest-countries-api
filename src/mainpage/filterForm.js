@@ -8,7 +8,7 @@ function FilterForm(props){
                 <input placeholder="Search for Country"></input>
             </form>
 
-            <form>
+            <form onChange={(e) => props.updateRegion(e)}>
                 <select defaultValue="">
                     <option value="">Filter by Region</option>
                     <option value='Africa'>Africa</option>
