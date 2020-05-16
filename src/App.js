@@ -12,7 +12,11 @@ function App() {
 
       <Switch>
         <Route exact path="/" render={() => < Main />}/>
-        <Route exact path="/country/:id" render={() => < ShowPage />}/>
+
+        <Route exact path="/country/:id" render={(props) => {
+          return < ShowPage country={props.match.params.id} />
+        }}/>
+        
       </Switch>
       {/* switch between the routes for the main and show page */}
     </div>
