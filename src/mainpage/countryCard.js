@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from  'react-router-dom';
 
 function CountryCard(props){
     let { name, flag, population, region, capital } = props.countryObj;
@@ -14,15 +15,17 @@ function CountryCard(props){
     
     return (
         <div className="card light-card">
-            {/* <img style={{width: '200px'}} alt="country flag" src={flag}></img> */}
-            <div style={cardStyle}></div>
+            <Link to={`/country/${name}`}>
+                <div style={cardStyle}></div>
+            </Link>
 
             <div className="card-contents">
                 <h3>{name}</h3>
                 <p><span>Population:</span> {population}</p>
                 <p><span>Region:</span> {region}</p>
                 <p><span>Capital:</span> {capital}</p>  
-            </div>   
+            </div>  
+             
         </div>
     )
 }
