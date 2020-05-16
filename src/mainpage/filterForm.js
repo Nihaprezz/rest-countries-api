@@ -1,9 +1,8 @@
 import React from 'react';
 
 function FilterForm(props){
-
     return (
-        <div style={{border: '3px solid red'}}>
+        <div className="filter-form">
             <form onChange={(e) => props.updatingSearch(e)}>
                 <input placeholder="Search for Country"></input>
             </form>

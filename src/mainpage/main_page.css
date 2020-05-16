@@ -1,6 +1,6 @@
 .card-container {
-    padding-left: 5%;
-    padding-right: 5%;
+    padding: 2% 5% 0 5%;
+    margin-top: .1%;
 }
 
 .main-page-grid {
@@ -16,7 +16,15 @@
     padding: 2% 5% 5% 5%;
 }
 
+/* Filter Form */
+.filter-form {
+    border: 3px solid green;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
 /* this light mode will be toggled on and off */
 .light-card {
     background: white;
 }
+
