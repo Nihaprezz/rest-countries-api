@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ShowDetails from './showDetails'
 
 const url = 'https://restcountries.eu/rest/v2'
 
@@ -9,17 +10,18 @@ const ShowPage = (props) => {
         const fetchCountry = async function(){
             let resp = await fetch(url + `/name/${props.country.toLowerCase()}?fullText=true`)
             resp = await resp.json();
-
-            setCountry(resp);
+        
+            setCountry(resp[0]);
         }
 
         fetchCountry();
     }, [props.country])
 
-    console.log(country)
+
     return (
         <div>
-            show page component
+            <button>Back</button>
+            {country && <ShowDetails country={country}/>}
         </div>
     )
 }
