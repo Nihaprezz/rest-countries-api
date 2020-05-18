@@ -22,7 +22,13 @@ const ShowPage = (props) => {
 
     return (
         <div className="show-page">
-            <Link to="/">Back</Link>
+            <div style={{paddingTop: '4%'}}>
+                <Link to="/" className='show-back-btn'>
+                    <ion-icon name="arrow-back-outline"></ion-icon>
+                    <span>Back</span>
+                </Link>
+            </div>
+            
             {country && <ShowDetails country={country}/>}
         </div>
     )
