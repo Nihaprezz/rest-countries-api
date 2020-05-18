@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'
 import ShowDetails from './showDetails'
+import './show_page.css'
 
 const url = 'https://restcountries.eu/rest/v2'
 
@@ -20,7 +22,7 @@ const ShowPage = (props) => {
 
     return (
         <div>
-            <button>Back</button>
+            <Link to="/">Back</Link>
             {country && <ShowDetails country={country}/>}
         </div>
     )
