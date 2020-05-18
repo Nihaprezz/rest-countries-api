@@ -1,9 +1,20 @@
+.show-page {
+    background: hsl(0, 0%, 98%);
+    height: 95vh;
+    margin-top: .1%;
+}
+
 .show-container {
-    border: 4px solid orange;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 10%;
+    column-gap: 2%;
 }
+
+.show-img {
+    align-self: center;
+    margin: 0% 10% 0% 10%;
+}
+
 
 .details-container {
     display: grid;
@@ -13,6 +24,10 @@
     'name name'
     'details-1 details-2'
     'borders borders';
+}
+
+.details-container p {
+    font-size: 1.7vh;
 }
 
 .details-container p span {
@@ -35,7 +50,8 @@
 
 .borders {
     grid-area: borders;
-    align-self: center;
+    padding-top: 5%;
+    align-self: start;
 }
 
 .borders span:first-child {

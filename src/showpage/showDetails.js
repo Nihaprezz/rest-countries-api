@@ -1,19 +1,29 @@
 import React from 'react';
 
 function ShowDetails(props){
-    let {borders, currencies, nativeName, flag, capital, population, region, subregion, topLevelDomain, languages, name } = props.country
+    let {borders, currencies, nativeName, flag, capital, population, region, subregion, topLevelDomain, languages, name } = props.country;
+
+    const imgStyle = {
+        background: `url(${flag})`, 
+        backgroundSize: '100%',
+        backgroundPosition: 'center center',
+        backgroundRepeat: 'no-repeat', 
+        width: 'auto', 
+        height: '25vw'
+    }
 
 
     return (
         <div className='show-container'>
-            <div className='show-img' style={{backgroundImage: `url(${flag})`, width: 'auto', height: 'auto', backgroundSize: '100%'}}></div>
+            <div className='show-img' style={imgStyle}></div>
+
             
             <section className='details-container'>
                 <h1 className='show-name'>{name}</h1>    
 
                 <div className="details-1">
                     <p><span>Native Name: </span>{nativeName}</p>
-                    <p><span>Population: </span>{population}</p>
+                    <p><span>Population: </span>{population.toLocaleString()}</p>
                     <p><span>Region: </span>{region}</p>
                     <p><span>Sub Region: </span>{subregion}</p>
                     <p><span>Capital: </span>{capital}</p>

@@ -21,7 +21,7 @@ const ShowPage = (props) => {
 
 
     return (
-        <div>
+        <div className="show-page">
             <Link to="/">Back</Link>
             {country && <ShowDetails country={country}/>}
         </div>
