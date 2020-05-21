@@ -18,13 +18,42 @@
 
 /* Filter Form */
 .filter-form {
-    border: 3px solid green;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
+.filter-form form {
+    margin-left: 4%;
+    align-self: center;
+    background: white;
+    color: hsl(0, 0%, 52%);
+    width: 80%;
+    box-shadow: 0px 2px 1px -1px rgba(173, 171, 171,0.2), 
+    0px 1px 1px 0px rgba(173, 171, 171, 0), 
+    0px 1px 3px 0px rgba(173, 171, 171, 0.2);
+}
+
+.filter-form form input { 
+    width: 81%;
+    border: none;
+    font-size: 1.5vh;
+    font-family: 'Nunito Sans', sans-serif;
+    padding: 3% 5% 3% 5%;
+}
+
+.filter-form form ion-icon {
+    padding-left: 5%;
+    vertical-align:middle;
+    font-weight: 800;
+    font-size: 2.5vh;
+}
+
+.filter-form .region-dd {
+    justify-self: end;
+}
 /* this light mode will be toggled on and off */
 .light-card {
     background: white;
 }
+
 
