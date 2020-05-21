@@ -24,9 +24,10 @@ function Main(){
         setSearchText(search)
     }    
 
-    const updateRegion = (e) => {
-        let region = e.target.value.toLowerCase();
-        let endpoint = region ? `/region/${region}` : '/all'
+    const updateRegion = (region) => {
+        // let region = e.target.value.toLowerCase();
+        // let endpoint = region ? `/region/${region}` : '/all'
+        let endpoint = `/region/${region}`
         fetchCountries(endpoint)
     }
 

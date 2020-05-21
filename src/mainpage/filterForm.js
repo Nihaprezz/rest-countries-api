@@ -3,7 +3,12 @@ import React, {useState} from 'react';
 function FilterForm(props){
     const [dropDown, setDropDown] = useState(false)
 
-    const filters = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania']
+    const filters = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
+
+    const selectedRegion = (region) => {
+        props.updateRegion(region);
+        setDropDown(false)
+    }
 
     return (
         <div className="filter-form">
@@ -21,7 +26,7 @@ function FilterForm(props){
 
                 <div className="options">
                     {dropDown && filters.map((region, index) => {
-                        return <li key={index}>{region}</li>
+                        return <li onClick={() =>  selectedRegion(region)} key={index}>{region}</li>
                     })}
                </div>
             </div>
