@@ -3,8 +3,6 @@ import React, {useState} from 'react';
 function FilterForm(props){
     const [dropDown, setDropDown] = useState(false)
 
-
-
     const filters = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania']
 
     return (
@@ -15,11 +13,13 @@ function FilterForm(props){
             </form>
 
             <div className="region-dd">
-                <p onClick={() => setDropDown(!dropDown)}>
-                    Filter By Region <ion-icon name="chevron-down-outline"></ion-icon>
-                </p>
+                <div className="option-hdr" onClick={() => setDropDown(!dropDown)}>
+                    <p>Filter By Region</p>
+                    <ion-icon name="chevron-down-outline"></ion-icon>
+                </div>
+                
 
-                <div>
+                <div className="options">
                     {dropDown && filters.map((region, index) => {
                         return <li key={index}>{region}</li>
                     })}
